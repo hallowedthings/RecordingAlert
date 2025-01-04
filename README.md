@@ -6,15 +6,15 @@ This is a small OBS script that makes OBS play a sound when you start or stop re
 - Unzip it and then copy and paste the "Beep" folder to C:\Program Files\obs-studio\obs-plugins.
 - (Optional, skip this step if it doesn't apply to you) If your OBS installation is in a custom location or in a different drive from C:, or if you just want to use your own audio files, you'll need to edit the lua script to point to the right destination. Right click it and open it with a text editor like Notepad or an IDE like Visual Studio Code. Update these to match the names/locations of the audio files (The files MUST be wav because this is what the Windows API's PlaySoundA function supports, so if they're .mp3s or something else you'll need to convert them first):
 
-  local start_chime = "C:\\Program Files\\obs-studio\\obs-plugins\\Beep\\start.wav"
+  _local start_chime = "C:\\Program Files\\obs-studio\\obs-plugins\\Beep\\start.wav"_
   
-  local stop_chime  = "C:\\Program Files\\obs-studio\\obs-plugins\\Beep\\stop.wav"
+  _local stop_chime  = "C:\\Program Files\\obs-studio\\obs-plugins\\Beep\\stop.wav"_
   
   For example:
   
-  local start_chime = "D:\\Program Files (x86)\\obs-studio\\obs-plugins\\Myownmusic\\naviheylisten.wav"
+  _local start_chime = "D:\\Program Files (x86)\\obs-studio\\obs-plugins\\Myownmusic\\naviheylisten.wav"_
   
-  local stop_chime  = "E:\\Users\\me\\\Music\\whatthedogdoin.wav"
+  _local stop_chime  = "E:\\Users\\me\\\Music\\whatthedogdoin.wav"_
   
 - Install the script from inside OBS:
   - Open OBS
