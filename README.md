@@ -2,9 +2,9 @@
 This is a small OBS script that makes OBS play a sound when you start or stop recording. The sounds are different. Windows only.
 
 # How To Set It Up
-- 1: Download OBSRecordingAlert.zip from here: https://github.com/hallowedthings/OBSRecordingAlert/releases/tag/V1.0.0
-- 2: Unzip it and then copy and paste the "Beep" folder to C:\Program Files\obs-studio\obs-plugins.
-- 3:	(Optional, skip this step if it doesn't apply to you) If your OBS installation is in a custom location or in a different drive from C:, or if you just want to use your own audio files, you'll need to edit the lua script to point to the right destination. Right click it and open it with a text editor like Notepad or an IDE like Visual Studio Code. Update these to match the names/locations of the audio files (The files MUST be wav because this is what the Windows API's PlaySoundA function supports, so if they're .mp3s or something else you'll need to convert them first):
+- Download OBSRecordingAlert.zip from here: https://github.com/hallowedthings/OBSRecordingAlert/releases/tag/V1.0.0
+- Unzip it and then copy and paste the "Beep" folder to C:\Program Files\obs-studio\obs-plugins.
+- (Optional, skip this step if it doesn't apply to you) If your OBS installation is in a custom location or in a different drive from C:, or if you just want to use your own audio files, you'll need to edit the lua script to point to the right destination. Right click it and open it with a text editor like Notepad or an IDE like Visual Studio Code. Update these to match the names/locations of the audio files (The files MUST be wav because this is what the Windows API's PlaySoundA function supports, so if they're .mp3s or something else you'll need to convert them first):
 
   local start_chime = "C:\\Program Files\\obs-studio\\obs-plugins\\Beep\\start.wav"
   
@@ -16,23 +16,23 @@ This is a small OBS script that makes OBS play a sound when you start or stop re
   
   local stop_chime  = "E:\\Users\\me\\\Music\\whatthedogdoin.wav"
   
-- 4: Install the script from inside OBS:
+- Install the script from inside OBS:
   - Open OBS
   - Go to Tools > Scripts
   - In the Scripts dialog, click the + button (add script)
   - Locate recording_alert.lua file and select it
   - Close the Scripts window (the script should now be active)
-- 5: Voila, it should be working now, and should play a sound when you start or stop recording. You can stop guessing whether you messed up now lol
+- Voila, it should be working now, and should play a sound when you start or stop recording. You can stop guessing whether you messed up now lol
 
 # How It Works, For Those Who Care
-- 1: LuaJIT and FFI
+- LuaJIT and FFI
   - OBS on Windows ships with LuaJIT, which lets Lua scripts call native Windows functions directly via the FFI (Foreign Function Interface).
-- 2:	winmm.dll
+- winmm.dll
   -	The script explicitly loads winmm.dll (a standard Windows library) which contains the PlaySoundA function.
-- 3:	PlaySoundA Function
+- PlaySoundA Function
   - PlaySoundA can play .wav files asynchronously without opening any external program.
   - The flags SND_ASYNC, SND_NOWAIT, etc. ensure there’s no pop-up or blocking behavior.
-- 4: OBS Event Callback
+- OBS Event Callback
   - When OBS starts or stops recording, it triggers specific “frontend events.”
   - The script’s on_event function checks whether the event is RECORDING_STARTED or RECORDING_STOPPED.
   - For each event, it calls the play_sound() function with either start_chime or stop_chime.
