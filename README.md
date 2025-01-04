@@ -1,5 +1,5 @@
 # OBSRecordingAlert
-This is a small OBS script that makes OBS play a sound when you start or stop recording. The sounds are different. Windows only.
+This is a small OBS script that makes OBS play a sound when you start or stop recording, as well as the wav files it needs. Windows only.
 
 # How To Set It Up
 - Download OBSRecordingAlert.zip from here: https://github.com/hallowedthings/OBSRecordingAlert/releases/tag/V1.0.0
