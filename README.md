@@ -20,7 +20,7 @@ This is a small OBS script that makes OBS play a sound when you start or stop re
   - Open OBS
   - Go to Tools > Scripts
   - In the Scripts dialog, click the + button (add script)
-  - Locate recording_alert.lua file and select it
+  - Locate recording_alert.lua and select it
   - Close the Scripts window (the script should now be active)
 - Voila, it should be working now, and should play a sound when you start or stop recording. You can stop guessing whether you messed up now lol
 
