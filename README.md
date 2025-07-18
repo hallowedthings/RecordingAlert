@@ -2,7 +2,7 @@
 This is a small OBS script that makes OBS play a sound and/or speak a message when you start, stop, pause or resume recording, as well as the wav files it needs. Windows only.
 
 # How To Set It Up
-- Download RecordingAlert.zip from here: https://github.com/hallowedthings/RecordingAlert/releases/tag/V1.1.0  
+- Download RecordingAlert.zip from here: [https://github.com/hallowedthings/RecordingAlert/releases/tag/V1.1.0](https://github.com/hallowedthings/RecordingAlert/releases/tag/v1.1.0)  
 - Unzip it and then copy and paste the "Beep" folder to `C:\Program Files\obs-studio\obs-plugins`.  
 - (Optional, skip this step if it doesn't apply to you) If your OBS installation is in a custom location or in a different drive from C:, or if you just want to use your own audio files, you'll need to edit the lua script to point to the right destination. Right click it and open it with a text editor like Notepad or an IDE like Visual Studio Code. Update these to match the names/locations of the audio files (The files **MUST** be `.wav` because this is what the Windows API's PlaySoundA function supports, so if they're `.mp3s` or something else you'll need to convert them first. The backslashes need to be escaped within the actual code, hence the double backslashes in the lua file):
 
